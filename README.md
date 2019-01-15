@@ -23,3 +23,5 @@ The Berkeley dataset must be downloaded and placed into the following subfolders
 
 # Initial Setup
 After downloading the dataset you must create the file lists by running the `gen_lists.ipynb` notebook. This will create a new folder `data/bdd100k/lists` containing lists of image names for the training and validation sets.
+
+Also create a folder `model` to allow saving and loading of the network weights.
