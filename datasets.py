@@ -68,8 +68,8 @@ class BerkeleyDataSet(data.Dataset):
 		# print(label)
 		# input()
 		# Height = axis 0 (y) , Width = axis 1 (x)
-		image = cv2.resize(image, None, fx=321/size[1], fy=321/size[0], interpolation = cv2.INTER_LINEAR)
-		label = cv2.resize(label, None, fx=321/size[1], fy=321/size[0], interpolation = cv2.INTER_NEAREST)
+		image = cv2.resize(image, None, fx=640/size[1], fy=360/size[0], interpolation = cv2.INTER_LINEAR)
+		label = cv2.resize(label, None, fx=640/size[1], fy=360/size[0], interpolation = cv2.INTER_NEAREST)
 		name = datafiles["name"]
 		#if self.scale:
 			#image, label = self.generate_scale_label(image, label)
