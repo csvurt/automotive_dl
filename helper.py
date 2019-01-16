@@ -32,7 +32,7 @@ def plot_errors(results_dict, title):
 
 def masks_to_colorimg(masks):
 	#colors = np.asarray([(201, 58, 64), (242, 207, 1), (0, 152, 75), (101, 172, 228),(56, 34, 132), (160, 194, 56)])
-	colors = np.asarray([(0,0,0), (201, 58, 64), (0, 152, 75)])
+	colors = np.asarray([(0,0,0), (255, 0, 0), (0, 0, 255)])
 
 	colorimg = np.ones((masks.shape[1], masks.shape[2], 3), dtype=np.float32) * 255
 	channels, height, width = masks.shape
@@ -45,3 +45,18 @@ def masks_to_colorimg(masks):
 				colorimg[y,x,:] = np.mean(selected_colors, axis=0)
 
 	return colorimg.astype(np.uint8)
+
+def format_network_input_as_image(input):
+	img = input * 255
+	img = img.astype(int)
+	
+	# reshape to x, y, channels
+	img = img.transpose((2,1,0))
+
+	# reshape to y, x, channels
+	img = img.transpose((1,0,2))
+
+	# reshape channels from BGR to RGB
+	img = img[:,:,::-1]
+	
+	return img
