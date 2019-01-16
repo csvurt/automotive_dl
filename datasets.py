@@ -28,8 +28,8 @@ class BerkeleyDataSet(data.Dataset):
 		# For Training Images
 		if self.train == True:
 			for name in self.img_ids:
-				img_file = osp.join(self.root, "images\\100k\\train\\{}.jpg".format(name))
-				label_file = osp.join(self.root, "drivable_maps\\color_labels\\train\\{}_drivable_color.png".format(name))
+				img_file = osp.join(self.root, "seg\\images\\train\\{}.jpg".format(name))
+				label_file = osp.join(self.root, "seg\\labels\\train\\{}_train_id.png".format(name))
 				self.files.append({
 					"img": img_file, 
 					"label": label_file, 
@@ -38,8 +38,8 @@ class BerkeleyDataSet(data.Dataset):
 		# For Validation images
 		else:
 			for name in self.img_ids:
-				img_file = osp.join(self.root, "images\\100k\\val\\{}.jpg".format(name))
-				label_file = osp.join(self.root, "drivable_maps\\color_labels\\val\\{}_drivable_color.png".format(name))
+				img_file = osp.join(self.root, "seg\\images\\val\\{}.jpg".format(name))
+				label_file = osp.join(self.root, "seg\\labels\\val\\{}_train_id.png".format(name))
 				self.files.append({
 					"img": img_file, 
 					"label": label_file, 
@@ -51,28 +51,29 @@ class BerkeleyDataSet(data.Dataset):
 	def __getitem__(self, index):
 		datafiles = self.files[index]
 		image = cv2.imread(datafiles["img"], cv2.IMREAD_COLOR)
-		label = cv2.imread(datafiles["label"], cv2.IMREAD_COLOR)
+		label = cv2.imread(datafiles["label"], cv2.IMREAD_GRAYSCALE)
 		size = image.shape
 		image = cv2.resize(image, None, fx=self.resize_to[0]/size[1], fy=self.resize_to[1]/size[0], interpolation = cv2.INTER_LINEAR)
 		label = cv2.resize(label, None, fx=self.resize_to[0]/size[1], fy=self.resize_to[1]/size[0], interpolation = cv2.INTER_NEAREST)
 		name = datafiles["name"]
 		image = np.asarray(image, np.float32)
+		label = np.asarray(label, np.float32)
 		image = image / 255 #normalize to 0,1 range
 
-		label = cv2.cvtColor(label, cv2.COLOR_BGR2GRAY)
+		#label = cv2.cvtColor(label, cv2.COLOR_BGR2GRAY)
 
 		'''
 		Berkeley Dataset has 4 different labels, 
 		they have differnt shades of red and blue but they mean the same thing. 
 		The following are the label values after converting to grayscale.
 		Red = 29, Blue = 76, Light Red = 123, Light Blue = 165
-		'''
+		
 		
 		label[label == 29] = 1 # Red labels
 		label[label == 123] = 1 # Light Red Labels
 		label[label == 76] = 2 # Blue labels
 		label[label == 165] = 2 # Light Blue Labels
-
+		'''
 		#image = image[:, :, ::-1]  # change to BGR
 
 		image = image.transpose((2, 0, 1))
@@ -91,8 +92,8 @@ class BerkeleyDataTestSet(data.Dataset):
 		self.img_ids = [i_id.strip() for i_id in open(list_path)]
 		self.files = [] 
 		for name in self.img_ids:
-			img_file = osp.join(self.root, "images\\100k\\test2\\{}.jpg".format(name))
-			label_file = osp.join(self.root, "drivable_maps\\color_labels\\test2\\{}_drivable_color.png".format(name))
+			img_file = osp.join(self.root, "seg\\images\\test\\{}.jpg".format(name))
+			label_file = osp.join(self.root, "seg\\labels\\test\\{}_train_id.png".format(name))
 			self.files.append({
 				"img": img_file,
 				"label": label_file,
@@ -105,7 +106,7 @@ class BerkeleyDataTestSet(data.Dataset):
 	def __getitem__(self, index):
 		datafiles = self.files[index]
 		image = cv2.imread(datafiles["img"], cv2.IMREAD_COLOR)
-		label = cv2.imread(datafiles["label"], cv2.IMREAD_COLOR)
+		label = cv2.imread(datafiles["label"], cv2.IMREAD_GRAYSCALE)
 		size = image.shape
 
 		image = cv2.resize(image, None, fx=self.resize_to[0]/size[1], fy=self.resize_to[1]/size[0], interpolation = cv2.INTER_LINEAR)
@@ -114,6 +115,7 @@ class BerkeleyDataTestSet(data.Dataset):
 		name = datafiles["name"]
 		image = np.asarray(image, np.float32)
 		image = image / 255 #normalize to 0,1 range
+		label = np.asarray(label, np.float32)
 
 		image = image.transpose((2, 0, 1))
 		return image.copy(), label.copy(), name, np.array(size)

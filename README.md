@@ -17,9 +17,7 @@ Using Anaconda create a new environment and install the following packages:
 # Berkeley Dataset
 The Berkeley dataset must be downloaded and placed into the following subfolders:
 
-**Drivable Maps** should be placed in `data/bdd100k/drivable_maps`
-
-**Images** should be placed in `data/bdd100k/images`
+**Segmentation** should be placed in `data/bdd100k/seg`
 
 # Initial Setup
 After downloading the dataset you must create the file lists by running the `gen_lists.ipynb` notebook. This will create a new folder `data/bdd100k/lists` containing lists of image names for the training and validation sets.
