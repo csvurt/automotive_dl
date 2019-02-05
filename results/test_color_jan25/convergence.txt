@@ -1,0 +1,193 @@
+----------
+Epoch 0/29
+LR 0.001
+train: loss: 2.391321
+val: loss: 2.324337
+saving best model with loss:  2.324336725870768
+46m 7s
+----------
+Epoch 1/29
+LR 0.002880714285714286
+train: loss: 2.299224
+val: loss: 2.242395
+saving best model with loss:  2.2423946324984234
+46m 13s
+----------
+Epoch 2/29
+LR 0.004762142857142857
+train: loss: 2.248139
+val: loss: 2.197311
+saving best model with loss:  2.197310972213745
+47m 18s
+----------
+Epoch 3/29
+LR 0.005356428571428571
+train: loss: 2.217429
+val: loss: 2.187773
+saving best model with loss:  2.1877730830510456
+47m 35s
+----------
+Epoch 4/29
+LR 0.0034750000000000007
+train: loss: 2.197337
+val: loss: 2.168104
+saving best model with loss:  2.168103539943695
+48m 13s
+----------
+Epoch 5/29
+LR 0.001593571428571429
+train: loss: 2.185995
+val: loss: 2.174692
+46m 18s
+----------
+Epoch 6/29
+LR 0.0022878571428571427
+train: loss: 2.189922
+val: loss: 2.173822
+46m 26s
+----------
+Epoch 7/29
+LR 0.004169285714285715
+train: loss: 2.191346
+val: loss: 2.177196
+46m 7s
+----------
+Epoch 8/29
+LR 0.005949285714285714
+train: loss: 2.183127
+val: loss: 2.151833
+saving best model with loss:  2.151833481788635
+45m 51s
+----------
+Epoch 9/29
+LR 0.004067857142857142
+train: loss: 2.171011
+val: loss: 2.147230
+saving best model with loss:  2.1472296555836996
+46m 7s
+----------
+Epoch 10/29
+LR 0.0021864285714285705
+train: loss: 2.161092
+val: loss: 2.139413
+saving best model with loss:  2.1394129689534505
+45m 43s
+----------
+Epoch 11/29
+LR 0.0016950000000000012
+train: loss: 2.161703
+val: loss: 2.142942
+45m 8s
+----------
+Epoch 12/29
+LR 0.003576428571428573
+train: loss: 2.165646
+val: loss: 2.158945
+46m 5s
+----------
+Epoch 13/29
+LR 0.0054578571428571445
+train: loss: 2.166773
+val: loss: 2.140665
+45m 24s
+----------
+Epoch 14/29
+LR 0.004660714285714284
+train: loss: 2.157685
+val: loss: 2.144446
+45m 21s
+----------
+Epoch 15/29
+LR 0.0027792857142857124
+train: loss: 2.150112
+val: loss: 2.135499
+saving best model with loss:  2.1354987438519797
+46m 28s
+----------
+Epoch 16/29
+LR 0.0011021428571428551
+train: loss: 2.148646
+val: loss: 2.137446
+45m 58s
+----------
+Epoch 17/29
+LR 0.002983571428571427
+train: loss: 2.150696
+val: loss: 2.137871
+45m 43s
+----------
+Epoch 18/29
+LR 0.004864999999999999
+train: loss: 2.154470
+val: loss: 2.136279
+45m 45s
+----------
+Epoch 19/29
+LR 0.00525357142857143
+train: loss: 2.149053
+val: loss: 2.130525
+saving best model with loss:  2.1305251177152
+44m 53s
+----------
+Epoch 20/29
+LR 0.0033721428571428583
+train: loss: 2.141443
+val: loss: 2.122805
+saving best model with loss:  2.12280530055364
+46m 11s
+----------
+Epoch 21/29
+LR 0.0014907142857142866
+train: loss: 2.137281
+val: loss: 2.137965
+45m 21s
+----------
+Epoch 22/29
+LR 0.002390714285714285
+train: loss: 2.140524
+val: loss: 2.133015
+45m 31s
+----------
+Epoch 23/29
+LR 0.004272142857142856
+train: loss: 2.144476
+val: loss: 2.131794
+46m 10s
+----------
+Epoch 24/29
+LR 0.005846428571428572
+train: loss: 2.143775
+val: loss: 2.128800
+45m 4s
+----------
+Epoch 25/29
+LR 0.003965
+train: loss: 2.137075
+val: loss: 2.122057
+saving best model with loss:  2.122056694030762
+45m 50s
+----------
+Epoch 26/29
+LR 0.0020835714285714286
+train: loss: 2.131102
+val: loss: 2.122841
+45m 39s
+----------
+Epoch 27/29
+LR 0.0017978571428571436
+train: loss: 2.131603
+val: loss: 2.121242
+saving best model with loss:  2.121241519451141
+45m 26s
+----------
+Epoch 28/29
+LR 0.0036792857142857152
+train: loss: 2.136519
+val: loss: 2.126313
+46m 1s
+----------
+Epoch 29/29
+LR 0.005560714285714287
+train: loss: 2.138517
+val: loss: 2.131476
+45m 0s
